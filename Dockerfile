@@ -33,12 +33,7 @@ RUN set -ex && \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y ca-certificates curl jq unzip --no-install-recommends && \
-    CHECK_URL="https://api.github.com/repos/rustdesk/rustdesk-server/releases/latest" && \
-    REMOTE_VERSION=$(curl -fsL --connect-timeout 5 "${CHECK_URL}" \
-                        | jq -r '.tag_name//empty' 2>/dev/null \
-                        | grep -Eo '([0-9]{1,}\.)+[0-9a-zA-Z]{1,}' \
-                        | head -n1 \
-                    ) && \
+    REMOTE_VERSION="1.1.7" && \
     DOWNLOAD_URL="${GITHUB_DOWNLOAD_MIRROR}/rustdesk/rustdesk-server/releases/download/${REMOTE_VERSION}/rustdesk-server-linux-amd64.zip" && \
     curl -fsSL -o rustdesk-server-linux-amd64.zip "${DOWNLOAD_URL}" && \
     unzip rustdesk-server-linux-amd64.zip && \
