@@ -14,7 +14,7 @@ FROM rust:slim
 LABEL Maintainer="Ansley Leung" \
     Description="Self-host Rustdesk server" \
     License="MIT License" \
-    RustdeskServer="1.1.6"
+    RustdeskServer="1.1.7"
 
 WORKDIR /root
 
