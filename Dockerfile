@@ -42,8 +42,9 @@ RUN set -ex && \
     DOWNLOAD_URL="${GITHUB_DOWNLOAD_MIRROR}/rustdesk/rustdesk-server/releases/download/${REMOTE_VERSION}/rustdesk-server-linux-amd64.zip" && \
     curl -fsSL -o rustdesk-server-linux-amd64.zip "${DOWNLOAD_URL}" && \
     unzip rustdesk-server-linux-amd64.zip && \
-    mv hbbr /usr/bin && \
-    mv hbbs /usr/bin && \
+    mv amd64/hbbr /usr/bin && \
+    mv amd64/hbbs /usr/bin && \
+    mv amd64/rustdesk-utils /usr/bin && \
     rm rustdesk-server-linux-amd64.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
