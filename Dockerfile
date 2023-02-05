@@ -39,12 +39,12 @@ RUN set -ex && \
                         | grep -Eo '([0-9]{1,}\.)+[0-9a-zA-Z]{1,}' \
                         | head -n1 \
                     ) && \
-    DOWNLOAD_URL="${GITHUB_DOWNLOAD_MIRROR}/rustdesk/rustdesk-server/releases/download/${REMOTE_VERSION}/rustdesk-server-linux-x64.zip" && \
-    curl -fsSL -o rustdesk-server-linux-x64.zip "${DOWNLOAD_URL}" && \
-    unzip rustdesk-server-linux-x64.zip && \
+    DOWNLOAD_URL="${GITHUB_DOWNLOAD_MIRROR}/rustdesk/rustdesk-server/releases/download/${REMOTE_VERSION}/rustdesk-server-linux-amd64.zip" && \
+    curl -fsSL -o rustdesk-server-linux-amd64.zip "${DOWNLOAD_URL}" && \
+    unzip rustdesk-server-linux-amd64.zip && \
     mv hbbr /usr/bin && \
     mv hbbs /usr/bin && \
-    rm rustdesk-server-linux-x64.zip && \
+    rm rustdesk-server-linux-amd64.zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
