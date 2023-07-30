@@ -14,7 +14,7 @@ FROM rust:slim
 LABEL Maintainer="Ansley Leung" \
     Description="Self-host Rustdesk server" \
     License="MIT License" \
-    RustdeskServer="1.1.7-4"
+    RustdeskServer="1.1.8-2"
 
 WORKDIR /root
 
@@ -33,7 +33,7 @@ RUN set -ex && \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y ca-certificates curl jq unzip --no-install-recommends && \
-    REMOTE_VERSION="1.1.7-4" && \
+    REMOTE_VERSION="1.1.8-2" && \
     DOWNLOAD_URL="${GITHUB_DOWNLOAD_MIRROR}/rustdesk/rustdesk-server/releases/download/${REMOTE_VERSION}/rustdesk-server-linux-amd64.zip" && \
     curl -fsSL -o rustdesk-server-linux-amd64.zip "${DOWNLOAD_URL}" && \
     unzip rustdesk-server-linux-amd64.zip && \
